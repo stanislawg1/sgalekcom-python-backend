@@ -7,6 +7,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /myapp
+COPY .env /myapp/.env
 
 EXPOSE 5000
 
