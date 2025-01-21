@@ -29,7 +29,7 @@ def contact():
     mail.attach(MIMEText(html, 'html'))
     
     try:
-        with smtplib.SMTP_SSL("smtppro.zoho.eu", 465) as server:
+        with smtplib.SMTP_SSL("smtp.zoho.eu", 465) as server:
             server.login(os.getenv('EMAIL_USER'), os.getenv('EMAIL_PASS'))
             server.send_message(mail)
         return jsonify({"code": 200, "status": "Message Sent"})

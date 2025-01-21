@@ -1,9 +1,12 @@
 name: Fully deploy to a website
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Powód uruchomienia workflow'
+        required: false
+        default: 'Ręczne uruchomienie'
 
 jobs:
 
